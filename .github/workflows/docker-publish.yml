@@ -43,9 +43,8 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            # always tag latest for this run
-            type=raw,value=latest
             # semver tags from git tags: v1.2.3 → 1.2.3, 1.2, 1
+            # the action's default flavor (latest=auto) adds `latest` whenever a semver matches
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}
