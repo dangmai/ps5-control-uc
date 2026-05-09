@@ -65,7 +65,7 @@ jobs:
       # Generate a signed SLSA build provenance statement and attach it to
       # the image in GHCR. Lets consumers verify the image was built from
       # this repo by this workflow:
-      #   gh attestation verify --owner dangmai oci://ghcr.io/dangmai/ps5-control-uc:latest
+      #   gh attestation verify --owner <OWNER> oci://ghcr.io/<OWNER>/<REPO>:<TAG>
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v2
         with:
